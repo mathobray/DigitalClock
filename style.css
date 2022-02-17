@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    overflow: hidden;
+    background: black;
+}
+.wrapper{
+    height: 100px;
+    width: 360px;
+    background: red;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    box-shadow: 0 0 30px blue;
+    animation: animate 1.5s linear infinite;
+    background: linear-gradient( 135deg,rgb(7, 73, 148),rgb(179, 133, 36),rgb(189, 16, 117),rgb(13, 163, 25));
+}
+.wrapper .clock,
+.wrapper .span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wrapper .clock{
+    background: rgb(24, 24, 29);
+    width: 345px;
+    line-height: 85px;
+    border-radius: 10px;
+}
+.wrapper .clock #time{
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient( 135deg,rgb(7, 73, 148),rgb(179, 133, 36),rgb(189, 16, 117),rgb(13, 163, 25));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.wrapper span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+}
+.wrapper span:first-child{
+    filter: blur(10px);
+}
+.wrapper span:last-child{
+    filter: blur(20px);
+}
